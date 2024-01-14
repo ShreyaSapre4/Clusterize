@@ -1,0 +1,55 @@
+    <div class="wrapper">
+        <div class="side_menu" id="menu">
+            <div id="menu_header">
+                <h1>Java</h1>
+                <label id="hide" onclick="hide()"><i class="fa fa-times"></i></label>
+            </div>
+            <div>
+                <a href="#">Stage 1 <i class="fa fa-caret-down" id="down_b" onclick="show_beginner()"></i> <i
+                        class="fa fa-caret-up" id="up_b" onclick="hide_beginner()" style="display: none;"></i></a>
+                <ul id="Beginner">
+                    <li><a href="/java_platforms">Platform</a></li>
+                    <li><a href="/java_syntax">Syntax</a></li>
+                    <li><a href="/java_datatypes">Datatypes</a></li>
+                    <li><a href="/java_operators">Operators</a></li>
+                    <li><a href="/java_scope">Scope</a></li>
+                    <li><a href="/java_identifiers">Identifiers & Wrappers</a></li>
+                    <li><a href="/java_input">Input</a></li>
+                    <li><a href="/java_string">String</a></li>
+                    <li><a href="/java_conditionals">Conditional statements</a></li>
+                    <li><a href="/java_loops">Loops</a></li>
+                    <li><a href="/java_arrays">Arrays</a></li>
+                    <li><a href="/java_methods">Methods</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="#">Stage 2 <i class="fa fa-caret-down" id="down_i" onclick="show_intermediate()"></i> <i
+                        class="fa fa-caret-up" id="up_i" onclick="hide_intermediate()" style="display: none;"></i></a>
+                <ul id="Intermediate">
+                    <li><a href="">OOPS concept</a><i class="fa fa-caret-down" id="down_oops" onclick="show_oops()"></i>
+                        <i class="fa fa-caret-up" id="up_oops" style="display: none;" onclick="hide_oops()"></i>
+                        <ul id="OOPS" style="display: none;">
+                            <li><a href="/java_classes">Class and Objects</a></li>
+                            <li><a href="/java_constructors">Constructors</a></li>
+                            <li><a href="/java_inheritence">Inheritance</a></li>
+                            <li><a href="/java_polymorphism">Polymorphism</a></li>
+                            <li><a href="/java_encapsulation">Encapsulation</a></li>
+                            <li><a href="/java_abstraction">Abstraction</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/java_multithreading">Multithreading</a></li>
+                    <li><a href="/java_exceptionHandling">Exception-handling</a></li>
+                    <li><a href="">Data structures</a><i class="fa fa-caret-down" id="down_ds" onclick="show_ds()"></i>
+                        <i class="fa fa-caret-up" id="up_ds" style="display: none;" onclick="hide_ds()"></i>
+                        <ul id="data_structures" style="display: none;">
+                            <li><a href="/java_stack">Stack</a></li>
+                            <li><a href="/java_queues">Queue</a></li>
+                            <li><a href="/java_linkedlist">Linked-list</a></li>
+                            <li><a href="/java_Trees">Trees</a></li>
+                            <li><a href="/java_Graphs">Graphs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <label id="show" onclick="show()"><i class="fa fa-reorder"></i></label>

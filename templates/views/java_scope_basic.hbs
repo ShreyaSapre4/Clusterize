@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Scope</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_scope"><button class="btn btn-primary level-btn">Level: Easy</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                  src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Scope</h3>
+            <p>In Java, a scope defines the region of code where a variable or method is accessible. There are mainly three types of scopes</p>
+            <ol>
+                <li><h4>Local scope:</h4><p>Variables declared within a block of code, such as within a method or a loop, have local scope. They are only accessible within that specific block.<br>Imagine you're in a room, and you have a notebook. You write something on a piece of paper inside that room. That piece of paper is like a variable with local scope.
+                    <br>In programming, local scope means that a variable exists and can only be used within a specific part of your code, like inside a function or a loop. It's like your piece of paper that you can only access in that particular room.</p></li>
+                <li><h4>Instance scope:</h4><p>Variables declared within a class but outside any methods have instance scope. They are associated with instances (objects) of the class and can be accessed by methods within the same class.<br>Think of a factory that produces cars. Each car that comes off the assembly line has a unique serial number. The serial number is attached to that specific car.
+                    <br>In programming, instance scope means that a variable is associated with an individual object or instance of a class. It's like the serial number of a car; it's unique to that car and can be accessed by methods or functions associated with that specific object.</p></li>
+                <li><h4>Class scope:</h4><p>Variables declared as static within a class have class scope. They are shared among all instances of the class and can be accessed using the class name.<br>Consider a library with books. There's a catalog of all the books available in the library. This catalog is shared among all library visitors; anyone can check it to find a book.
+                    <br>In programming, class scope means that a variable is shared among all instances (objects) of a class. It's like the library's catalog; it's accessible to everyone who visits the library (or uses the class), and you don't need to create a new catalog for each visitor.</p></li>
+            </ol>
+            
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            public class MyClass {
+                                // This is a class-level variable with class-wide scope
+                                  static int classVariable = 10;
+                                public static void main(String args[]) {
+                                
+                             
+                                    // This is a method-level variable with method-wide scope
+                                    int methodVariable = 5;
+                            
+                                    System.out.println("Inside the main method:");
+                                    System.out.println("classVariable: " + classVariable);
+                                    System.out.println("methodVariable: " + methodVariable);
+                            
+                                    if (true) {
+                                        // This is a block-level variable with block-wide scope (inside the if block)
+                                        int blockVariable = 15;
+                            
+                                        System.out.println("Inside the if block:");
+                                        System.out.println("classVariable: " + classVariable);
+                                        System.out.println("methodVariable: " + methodVariable);
+                                        System.out.println("blockVariable: " + blockVariable);
+                                    }
+                            
+                                    // The blockVariable is not accessible here because it's out of scope
+                                    // System.out.println("Outside the if block:");
+                                    // System.out.println("blockVariable: " + blockVariable);
+                            
+                                    // You can still access classVariable and methodVariable here
+                                    System.out.println("Outside the if block:");
+                                    System.out.println("classVariable: " + classVariable);
+                                    System.out.println("methodVariable: " + methodVariable);
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6xyp"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_operators">Prev</a>
+                <a class="btn btn-primary next" href="/java_identifiers">Next</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="js/java_prism.js"></script>
+       <script src="js/chatbot.js"></script>
+    <script>
+        function show_beginner() {
+            document.getElementById('Beginner').style.display = 'block';
+            document.getElementById('down_b').style.display = 'none';
+            document.getElementById('up_b').style.display = 'inline';
+        }
+        function hide_beginner() {
+            document.getElementById('Beginner').style.display = 'none';
+            document.getElementById('down_b').style.display = 'inline';
+            document.getElementById('up_b').style.display = 'none';
+        }
+        function show_intermediate() {
+            document.getElementById('Intermediate').style.display = 'block';
+            document.getElementById('down_i').style.display = 'none';
+            document.getElementById('up_i').style.display = 'inline';
+        }
+        function hide_intermediate() {
+            document.getElementById('Intermediate').style.display = 'none';
+            document.getElementById('down_i').style.display = 'inline';
+            document.getElementById('up_i').style.display = 'none';
+        }
+        function show_ds() {
+            document.getElementById('data_structures').style.display = 'block';
+            document.getElementById('down_ds').style.display = 'none';
+            document.getElementById('up_ds').style.display = 'inline';
+        }
+        function hide_ds() {
+            document.getElementById('data_structures').style.display = 'none';
+            document.getElementById('down_ds').style.display = 'inline';
+            document.getElementById('up_ds').style.display = 'none';
+        }
+        function show_oops() {
+            document.getElementById('OOPS').style.display = 'block';
+            document.getElementById('down_oops').style.display = 'none';
+            document.getElementById('up_oops').style.display = 'inline';
+        }
+        function hide_oops() {
+            document.getElementById('OOPS').style.display = 'none';
+            document.getElementById('down_oops').style.display = 'inline';
+            document.getElementById('up_oops').style.display = 'none';
+        }
+        function show() {
+            document.getElementById('menu').style.transform = 'translate(260px)'
+            document.getElementById('hide').style.display = 'block';
+            document.getElementById('show').style.display = 'none';
+            document.getElementById('main_content').style.marginLeft = '260px'
+        }
+        function hide() {
+            document.getElementById('menu').style.transform = 'translate(-250px)';
+            document.getElementById('show').style.display = 'block';
+            document.getElementById('main_content').style.marginLeft = '0px'
+        }
+    </script>
+</body>
+
+</html>

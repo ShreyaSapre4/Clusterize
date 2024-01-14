@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Multithreading</title>
+</head>
+
+<body>
+   {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <h3>Multithreading</h3>
+            <p>Multithreading is a crucial concept in Java and concurrent programming that allows a program to perform multiple tasks simultaneously, improving efficiency and responsiveness.</p>
+            <p>Multithreading is a programming and execution technique that allows a computer or program to perform multiple tasks or processes concurrently within a single program or process. In multithreading, a program is divided into multiple threads, where each thread represents an independent unit of execution. These threads can run simultaneously, allowing a program to accomplish several tasks at the same time, effectively utilizing the available CPU cores and improving performance and responsiveness.</p>
+
+            <p>Multithreading is particularly useful for tasks that can be performed independently, such as handling multiple client requests in a server application, running background processes while maintaining a responsive user interface, or optimizing resource usage on multi-core processors. Java, among other programming languages, provides robust support for multithreading, making it easier for developers to create efficient and concurrent applications. To understand Multithreading in depth we must know the following concepts:</p>
+            <h5>Process</h5>
+            <p> Processes in Java refer to self-contained and independent program instances running in their own isolated memory spaces. Each process consists of its code, data, system resources, and execution environment. Processes do not share memory directly and are isolated from one another.Processes are commonly used for running separate Java applications, providing isolation and resource management that ensures program stability and security.</p>
+            <h5>Threads</h5>
+            <p>Threads are the smaller units of execution within a Java program and represent individual paths of execution. They allow for concurrent execution of multiple tasks within a single process, sharing the same memory space and resources. </p>
+            <p><b>Thread states</b></p>
+            <ul>
+                <li><b>New:</b><p>A thread that has been created but has not yet started.</p></li>
+                <li><b>Runnable:</b><p>A thread that is eligible to run but may or may not be currently executing.</p></li>
+                <li><b>Blocked/Waiting:</b><p>A thread that is waiting for a resource or a specific condition to become true.</p></li>
+                <li><b>Timed Waiting:</b><p>A thread that is waiting for a specified period.</p></li>
+                <li><b>Terminated:</b><p>A thread that has finished its execution.</p></li>
+            </ul>
+            <h5>Concurrency vs parallelism</h5>
+            <p>Concurrency and parallelism are often used interchangeably, but they have distinct meanings. Concurrency is the concept of multiple tasks making progress together, typically through time-slicing on a single processor. Parallelism involves executing multiple tasks simultaneously on multiple processors or cores. Java provides concurrency support, allowing you to create concurrent applications even on single-core machines.</p>
+            <h5>Thread creation</h5>
+            <p>In Java, you can create threads using two primary approaches: by extending the <b>Thread class</b> or by implementing the <b>Runnable interface</b>. Extending the Thread class is a straightforward way to create a thread, while implementing Runnable provides more flexibility as you can share the same Runnable instance among multiple threads.</p>
+            <h3>Example</h3>
+            <h5>Using Thread class</h5>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            class MyThread extends Thread {
+                                public void run() {
+                                    for (int i = 1; i <= 5; i++) {
+                                        System.out.println("Thread " + Thread.currentThread().getId() + ": Count " + i);
+                                    }
+                                }
+                            }
+                            
+                            public class MyClass {
+                                 public static void main(String[] args) {
+                                    MyThread thread1 = new MyThread();
+                                    MyThread thread2 = new MyThread();
+                            
+                                    // Start both threads
+                                    thread1.start();
+                                    thread2.start();
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it
+                out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6C1N"></div>
+                    </div>
+                </div>
+            </div>
+            <h5>Using Runnable Interface</h5>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            class MyThread extends Thread {
+                                public void run() {
+                                    for (int i = 1; i <= 5; i++) {
+                                        System.out.println("Thread " + Thread.currentThread().getId() + ": Count " + i);
+                                    }
+                                }
+                            }
+                            
+                            public class MyClass {
+                                 public static void main(String[] args) {
+                                    MyThread thread1 = new MyThread();
+                                    MyThread thread2 = new MyThread();
+                            
+                                    // Start both threads
+                                    thread1.start();
+                                    thread2.start();
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Try it
+                out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true" id="modal2">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6C1Q"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_abstraction">Prev</a>
+                <a class="btn btn-primary next" href="/java_exceptionHandling">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+</html>

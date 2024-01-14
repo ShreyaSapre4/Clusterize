@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Exception-handling</title>
+</head>
+
+<body>
+   {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}       <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <h3>Exception-handling</h3>
+            <h4>Exception</h4>
+            <p>An exception in Java is an object that represents an abnormal or unexpected condition or event that occurs during the execution of a program. Exceptions can be caused by various factors, such as user input errors, invalid data, hardware failures, or other exceptional situations. When an exception occurs, it disrupts the normal flow of the program and may lead to the termination of the program if not properly handled.</p>
+            <h4>Types of exceptions</h4>
+            <ul>
+                <li>IOException</li>
+                <li>NullPointerException</li>
+                <li>ArrayIndexOutOfBoundsException</li>
+                <li>ArithmeticException</li>
+                <li>FileNotFoundException</li>
+                <li>SQLException</li>
+            </ul>
+            <h4>Exception-handling</h4>
+            <p>Exception handling in Java is a programming construct that allows developers to manage and recover from exceptions gracefully. It involves the use of <b>try</b>, <b>catch</b> and <b>finally </b> blocks to handle exceptional conditions and maintain program stability. Exception handling ensures that when an exception occurs, the program doesn't abruptly terminate but instead provides mechanisms to handle and report the exception, allowing the program to continue executing.</p>
+            <ul>
+                <li><h5>Try</h5><p> Code that may potentially throw an exception is enclosed within a try block. The try block is where the exceptional condition is monitored.</p></li>
+                <li><h5>Catch</h5><p> If an exception occurs within the try block, control is transferred to one or more catch blocks that match the type of exception thrown. Each catch block handles a specific exception type and provides code to deal with the exceptional situation gracefully.</p></li>
+                <li><h5>Finally</h5><p> Alongside try and catch blocks, Java supports the finally block. Code within a finally block is guaranteed to execute, whether or not an exception occurs. It's commonly used for resource cleanup, ensuring that resources are released properly, even in the presence of exceptions.</p></li>
+            </ul>
+            <h3>Example</h3>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            public class MyClass {
+                                public static void main(String[] args) {
+                                    int n=12;
+                                    int d=0;
+                                    try {
+                                        int result=n/d;
+                                        System.out.println("Result: " + result);
+                                    } catch (ArithmeticException e) {
+                                        System.out.println(e);
+                                    } finally {
+                                        System.out.println("The finally block is executed no matter what");
+                                    }
+                            
+                                    System.out.println("Program continues after exception handling.");
+                                }
+                            }  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6C23"></div>
+                    </div>
+                </div>
+            </div>
+            <h4>User Defined exceptions</h4>
+            <p>User-defined exceptions in Java are custom exception classes that developers create to represent application-specific error conditions. While Java provides a rich set of built-in exceptions for handling common error scenarios, there are situations where application-specific errors need to be captured and handled more precisely. To address this, developers can define their own exception classes by extending Java's <b>Exception</b> class or one of its subclasses, such as <b>RuntimeException</b>.</p>
+            <p>The <b>throws</b> keyword is used in a method declaration to indicate that the method may throw one or more types of exceptions. When a method uses the throws keyword, it is specifying that it might encounter exceptions of the specified types during its execution, but it does not handle those exceptions itself. Instead, it delegates the responsibility of handling these exceptions to the caller or the methods that call it.</p>
+            <p>The <b>throw</b> keyword is used to explicitly throw an exception from within a method. It is typically used when an exceptional situation is detected in the code, and the developer wants to generate and propagate a specific exception object to indicate that condition. The throw keyword is followed by an exception object or an expression that evaluates to an exception object.</p>
+            <h3>Example</h3>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            class InsufficientBalanceException extends Exception {
+                                public InsufficientBalanceException(String message) {
+                                    super(message);
+                                }
+                            }
+                            
+                            class BankAccount {
+                                private double balance;
+                            
+                                public BankAccount(double initialBalance) {
+                                    this.balance = initialBalance;
+                                }
+                            
+                                public void withdraw(double amount) throws InsufficientBalanceException {
+                                    if (amount > balance) {
+                                        throw new InsufficientBalanceException("Insufficient balance in the account.");
+                                    }
+                                    balance -= amount;
+                                    System.out.println("Withdrawal successful. New balance: " + balance);
+                                }
+                            }
+                            
+                            public class MyClass {
+                                public static void main(String[] args) {
+                                    BankAccount account = new BankAccount(1000.0);
+                            
+                                    try {
+                                        account.withdraw(1500.0);
+                                    } catch (InsufficientBalanceException e) {
+                                        System.out.println("Error: " + e.getMessage());
+                                    }
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true" id="modal2">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6C27"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_multithreading">Prev</a>
+                <a class="btn btn-primary next" href="/java_stack">Next</a>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+</html>

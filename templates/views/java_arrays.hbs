@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Java arrays</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_arrays_basic"><button class="btn btn-primary level-btn">Level: Intermediate</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                  src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Arrays</h3>
+            <p>Arrays in Java are data structures used to store a collection of elements of the same data type. They offer a convenient way to work with multiple values of the same kind.</p>
+            <p>Arrays have a fixed size, meaning you must specify the number of elements they can hold when you declare them. Once the size is set, it cannot be changed.</p>
+            <p>All elements in an array must have the same data type, whether it's a primitive type (e.g., int, char) or a reference type (e.g., objects).Elements in an array are stored at consecutive memory locations and are accessed using an index. The index starts at 0 for the first element and goes up to length - 1, where length is the size of the array.</p>
+            <p>Arrays can be initialized at the time of declaration or later using the new keyword for dynamic initialization.You can access array elements using square brackets [] with the element's index (e.g., myArray[0])</p>
+            <p> Java supports multidimensional arrays, such as 2D arrays (arrays of arrays) and 3D arrays, for representing tabular data.</p>
+            <p><b>Note: While arrays have a fixed size, Java provides dynamic data structures like ArrayList from the <i>Java.util</i> package that can grow or shrink as needed</b></p>
+            <hr>
+            <h3>Array methods</h3>
+            <p>These methods are part of the <b>Java.util.Arrays</b> class and are commonly used for various array-related operations in Java.</p>
+            <ol>
+                <li>
+                    <h5>arrayName.length</h5><p> Returns the number of elements in the array.</p>
+                </li>
+                <li>
+                    <h5>arrayName.clone()</h5><p>Creates a shallow copy of the array.</p>
+                </li>
+                <li>
+                    <h5>Arrays.copyOf(originalArray, newLength)</h5><p>Copies the specified range of elements from one array to another.</p>
+                </li>
+                <li>
+                    <h5>Arrays.fill(arrayName, value)</h5><p>Sets all elements of the array to the specified value.</p>
+                </li>
+                <li>
+                    <h5>Arrays.sort(arrayName)</h5><p> Sorts the elements of the array in ascending order.</p>
+                </li>
+                <li>
+                    <h5>Arrays.binarySearch(sortedArray, key)</h5><p>Searches for a specified element in a sorted array using binary search.</p>
+                </li>
+                <li>
+                    <h5>Arrays.equals(array1, array2)</h5><p> Compares the contents of two arrays for equality.</p>
+                </li>
+                <li>
+                    <h5>Arrays.toString(arrayName)</h5><p>Returns a string representation of the array.</p>
+                </li>
+                <li>
+                    <h5>Arrays.hashCode(arrayName)</h5><p>Returns a hash code for the array.</p>
+                </li>
+                <li>
+                    <h5>Arrays.asList(arrayName)</h5><p>Converts an array to a List.</p>
+                </li>
+            </ol>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            import Java.util.Arrays;
+                            public class MyClass {
+                            
+                                public static void main(String[] args) {
+                                    // Declare and initialize an array
+                                    int[] numbers = { 5, 2, 9, 1, 5, 6 };
+                            
+                                    // Method 1: length
+                                    int arrayLength = numbers.length;
+                                    System.out.println("1. Array length: " + arrayLength);
+                            
+                                    // Method 2: clone
+                                    int[] clonedArray = numbers.clone();
+                                    System.out.println("2. Cloned Array: " + Arrays.toString(clonedArray));
+                            
+                                    // Method 3: copyOf
+                                    int[] copiedArray = Arrays.copyOf(numbers, 4);
+                                    System.out.println("3. Copied Array: " + Arrays.toString(copiedArray));
+                            
+                                    // Method 4: fill
+                                    int[] filledArray = new int[5];
+                                    Arrays.fill(filledArray, 7);
+                                    System.out.println("4. Filled Array: " + Arrays.toString(filledArray));
+                            
+                                    // Method 5: sort
+                                    Arrays.sort(numbers);
+                                    System.out.println("5. Sorted Array: " + Arrays.toString(numbers));
+                            
+                                    // Method 6: binarySearch
+                                    int key = 5;
+                                    int index = Arrays.binarySearch(numbers, key);
+                                    System.out.println("6. Index of " + key + ": " + index);
+                            
+                                    // Method 7: equals
+                                    int[] anotherArray = { 5, 2, 9, 1, 5, 6 };
+                                    boolean areEqual = Arrays.equals(numbers, anotherArray);
+                                    System.out.println("7. Arrays are equal: " + areEqual);
+                            
+                                    // Method 8: toString
+                                    String arrayString = Arrays.toString(numbers);
+                                    System.out.println("8. Array as String: " + arrayString);
+                            
+                                    // Method 9: hashCode
+                                    int arrayHashCode = Arrays.hashCode(numbers);
+                                    System.out.println("9. Array Hash Code: " + arrayHashCode);
+                            
+                                    // Method 10: asList
+                                    Integer[] integerArray = { 1, 2, 3, 4, 5 };
+                                    Java.util.List<Integer> arrayList = Arrays.asList(integerArray);
+                                    System.out.println("10. Array as List: " + arrayList);
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6yl7"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_loops">Prev</a>
+                <a class="btn btn-primary next" href="/java_methods">Next</a>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+        <script src="js/chatbot.js"></script>
+</body>
+</html>

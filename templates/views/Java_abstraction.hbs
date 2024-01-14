@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Abstraction</title>
+</head>
+
+<body>
+     {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <h3>Abstraction</h3>
+            <p>Abstraction involves the creation of abstract classes and interfaces that define a set of methods and properties without specifying their implementation details. It allows you to model real-world entities and systems by focusing on the essential characteristics and behaviors, while hiding or abstracting away the less important details.</p>
+            <p>In Java, you can declare <b>abstract classes</b> and <b>interfaces</b> to represent abstract concepts.</p>
+            <h4>Abstract Methods: </h4><p>Abstract methods are declared in abstract classes or interfaces but do not provide an implementation. Subclasses or classes implementing interfaces must provide concrete implementations for these abstract methods. This enforces consistency in derived classes and ensures that essential behaviors are defined.</p>
+            <p><b>Note: Abstract classes can have both abstract (unimplemented) methods and concrete (implemented) methods, while interfaces consist of abstract method declarations only.</b></p>
+            <p>Abstract classes are useful when you want to provide a common base for a group of related classes, sharing some common methods and attributes, but allowing variations in behavior in subclasses.</p>
+            <p>Interfaces are valuable for defining contracts that classes unrelated by inheritance can adhere to, enabling multiple inheritance of behavior through interface implementation.</p>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            // Abstract class representing a shape
+abstract class Shape {
+    // Abstract method to calculate area (no implementation)
+    public abstract double calculateArea();
+}
+// Interface for shapes with perimeters
+interface Perimeter {
+    double calculatePerimeter();
+}
+// Concrete subclass representing a circle
+class Circle extends Shape implements Perimeter {
+    private double radius;
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing the abstract method to calculate the area of a circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Implementing the interface method to calculate the perimeter of a circle
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Concrete subclass representing a rectangle
+class Rectangle extends Shape implements Perimeter {
+    private double length;
+    private double width;
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementing the abstract method to calculate the area of a rectangle
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Implementing the interface method to calculate the perimeter of a rectangle
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+public class MyClass {
+    public static void main(String[] args) {
+        // Create a circle and calculate its area and perimeter
+        Circle circle = new Circle(5.0);
+        double circleArea = circle.calculateArea();
+        double circlePerimeter = circle.calculatePerimeter();
+
+        System.out.println("Circle Area: " + circleArea);
+        System.out.println("Circle Perimeter: " + circlePerimeter);
+
+        // Create a rectangle and calculate its area and perimeter
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+        double rectangleArea = rectangle.calculateArea();
+        double rectanglePerimeter = rectangle.calculatePerimeter();
+
+        System.out.println("Rectangle Area: " + rectangleArea);
+        System.out.println("Rectangle Perimeter: " + rectanglePerimeter);
+    }
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it
+                out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6C1s"></div>
+                    </div>
+                </div>
+            </div>
+            <p><b>Note: The <i>@Override</i> annotation in Java is used to indicate that a method in a subclass is intended to override a method with the same name and parameter signature in its superclass. It's optional but recommended to use <i>@Override</i> to ensure that you're correctly overriding a method from a superclass.</b></p>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_encapsulation">Prev</a>
+                <a class="btn btn-primary next" href="/java_multithreading">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '250px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+</html>

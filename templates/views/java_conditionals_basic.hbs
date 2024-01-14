@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/java_styles.css">
+   <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java conditonal statements</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+
+     
+
+        {{!-- <label id="show" onclick="show()"><i class="fa fa-reorder"></i></label> --}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_conditionals"><button class="btn btn-primary level-btn">Level: Easy</button></a>
+            </div>
+    
+            <div class="iframe-container">
+                <iframe
+                src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+        
+              <button class="click"><span>🤖</span></button>
+
+            <h3>Conditional statements</h3>
+            <p>Conditional statements in Java allow you to execute different blocks of code based on whether certain conditions are met. Java provides several conditional statements, including if, else, else if, and switch. Here's an overview of how these conditional statements work:</p>
+            <ol>
+                <li>
+                    <h5>if Statement</h5><p>An "if" statement is like making a decision based on a condition. If a specific condition is true, you do something; if it's not true, you skip that action.
+                        <br>Example: If it's raining outside, you take an umbrella</p>
+                </li>
+                <li>
+                    <h5>if-else Statement:</h5><p>An "if-else" statement is like having two options based on a condition. If a condition is true, you do one thing; if it's false, you do something else.
+                        <br>Example: If you have money in your pocket, you buy ice cream; otherwise, you go home.</p>
+                </li>
+                <li>
+                    <h5>If- else if - else Statement: </h5><p> An "if-else if-else" statement is like having many choices but making only one. It checks multiple conditions in order and picks the first true one.
+                        <br>Example: In a restaurant, if you're very hungry, you order a big meal; if you're a little hungry, you order a snack; otherwise, you order dessert.</p>
+                </li>
+                <li>
+                    <h5>switch Statement: </h5><p>A "switch" statement is like a menu with many choices. You pick one based on a value, and it takes you to that choice's action.
+                       <br> Example: Imagine a vending machine. When you press a button (like "Coke" or "Chips"), it gives you that item based on your choice.</p>
+                </li>
+            </ol>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            public class MyClass {
+                                public static void main(String[] args) {
+                                    int number = 42;
+                            
+                                    // if statement
+                                    if (number > 0) {
+                                        System.out.println("1. Number is positive.");
+                                    }
+                            
+                                    // if-else statement
+                                    if (number % 2 == 0) {
+                                        System.out.println("2. Number is even.");
+                                    } else {
+                                        System.out.println("2. Number is odd.");
+                                    }
+                            
+                                    // if-else if-else statement
+                                    if (number < 0) {
+                                        System.out.println("3. Number is negative.");
+                                    } else if (number == 0) {
+                                        System.out.println("3. Number is zero.");
+                                    } else {
+                                        System.out.println("3. Number is positive.");
+                                    }
+                            
+                                    // switch statement
+                                    char grade = 'B';
+                                    switch (grade) {
+                                        case 'A':
+                                            System.out.println("4. Excellent!");
+                                            break;
+                                        case 'B':
+                                            System.out.println("4. Good.");
+                                            break;
+                                        case 'C':
+                                            System.out.println("4. Fair.");
+                                            break;
+                                        case 'D':
+                                            System.out.println("4. Needs improvement.");
+                                            break;
+                                        default:
+                                            System.out.println("4. Invalid grade.");
+                                    }
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6ykd"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_string_basic">Prev</a>
+                <a class="btn btn-primary next" href=".java_loops_basic">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+
+            const click = document.querySelector('.click')
+    const frame = document.querySelector('.iframe-container')
+    let i = 1;
+    click.addEventListener('click', ()=>{
+        if(i == 0) {
+            frame.style.display = 'none'
+            i = 1
+        }else if(i == 1){
+            frame.style.display = 'block'
+            i = 0
+        }
+    })
+        </script>
+</body>
+</html>

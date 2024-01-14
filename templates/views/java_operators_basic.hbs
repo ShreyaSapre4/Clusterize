@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Operators</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        {{!-- <label id="show" onclick="show()"><i class="fa fa-reorder"></i></label> --}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_operators"><button class="btn btn-primary level-btn">Level: Easy</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Operators</h3>
+            <p>Java supports various operators for performing operations on data:</p>
+            <h4>Arithmetic:</h4>
+            <ul>
+                <li><p>Addition (+): Adds two numbers together. Example: 5 + 3 = 8</p></li>
+                <li><p>Subtraction (-): Subtracts the second number from the first. Example: 7 - 2 = 5</p></li>
+                <li><p>Multiplication (*): Multiplies two numbers. Example: 4 * 6 = 24</p></li>
+                <li><p>Division (/): Divides the first number by the second. Example: 10 / 2 = 5</p></li>
+                <li><p>Modulus/remainder (%): Returns the remainder of the division. Example: 9 % 4 = 1</p></li>
+            </ul>
+            
+            <h4>Assignment:</h4>
+            <ul>
+                <li><p>= Assignment: Assigns a value to a variable. Example: int x = 5;</p></li>
+                <li><p>+= Add and assign: Adds a value to a variable and assigns the result. Example: x += 3; // x becomes 8 </p></li>
+                <li><p>-= Subtract and assign: Subtracts a value from a variable and assigns the result. Example: x -= 2; // x becomes 6 </p></li>
+                <li><p>*= Multiply and assign: Multiplies a variable by a value and assigns the result. Example: x *= 4; // x becomes 24</p></li>
+                <li><p>/= Divide and assign: Divides a variable by a value and assigns the result. Example: x /= 3; // x becomes 8</p></li>
+                <li><p>%= Modulus and assign: Calculates the modulus and assigns the result. Example: x %= 5; // x becomes 3</p></li>
+            </ul>
+            
+            <h4>Logical:</h4>
+            <ul>
+                <li><p>&& Logical AND: Returns true if both conditions are true. Example: (x > 0) && (y < 10)</p></li>
+                <li><p>|| Logical OR: Returns true if at least one condition is true. Example: (a < 5) || (b > 7)</p></li>
+                <li><p>! Logical NOT (negation): Reverses the logical value of a condition. Example: !(x > 5)</p></li>
+            </ul>
+            
+            <h4>Relational:</h4>
+            <ul>
+                <li><p>== Equal to: Checks if two values are equal. Example: (x == y)</p></li>
+                <li><p>!= Not equal to: Checks if two values are not equal. Example: (a != b)</p></li>
+                <li><p>&lt Less than: Checks if the first value is less than the second. Example: (x < 10)</p></li>
+                <li><p>&gt Greater than: Checks if the first value is greater than the second. Example: (y > 5)</p></li>
+                <li><p>&lt= Less than or equal to: Checks if the first value is less than or equal to the second. Example: (a <= 7)</p></li>
+                <li><p>&gt= Greater than or equal to: Checks if the first value is greater than or equal to the second. Example: (b >= 3)</p></li>
+            </ul>
+            
+            <h4>Bitwise:</h4>
+            <ul>
+                <li><p>& Bitwise AND: Performs a bitwise AND operation. Example: (x & y)</p></li>
+                <li><p>| Bitwise OR: Performs a bitwise OR operation. Example: (a | b)</p></li>
+                <li><p>^ Bitwise XOR: Performs a bitwise XOR (exclusive OR) operation. Example: (m ^ n)</p></li>
+                <li><p>~ Bitwise NOT: Inverts the bits of a value. Example: (~x)</p></li>
+                <li><p>&gt&gt Bitwise right shift: Shifts the bits to the right. Example: (x &gt&gt 2)</p></li>
+                <li><p>&lt&lt Bitwise left shift: Shifts the bits to the left. Example: (y &lt&lt 3)</p></li>
+                <li><p>&gt&gt&gt Unsigned right shift: Shifts the bits to the right, filling with zeros. Example: (z &gt&gt&gt 1)</p></li>
+            </ul>
+            
+            <h4>Increment/Decrement:</h4>
+            <ul>
+                <li><p>++ Increment: Adds 1 to a variable. Example: x++;</p></li>
+                <li><p>-- Decrement: Subtracts 1 from a variable. Example: y--; </p></li>
+            </ul>
+            
+
+<h4>Ternary:</h4>
+<ul>
+    <li><h5>? :: Conditional operator used for inline conditional expressions.</h5></li>
+</ul>
+<hr>
+<div class="code_container">
+    <div class="code_wrapper">
+        <pre>
+            <code id="code" class="language-Java">
+                public class MyClass {
+                    public static void main(String[] args) {
+                 // Arithmetic Operators
+                        int num1 = 10;
+                        int num2 = 5;
+                
+                        System.out.println("Arithmetic Operators:");
+                        System.out.println("Addition (+): " + (num1+num2));
+                        System.out.println("Subtraction (-): " + (num1-num2));
+                        System.out.println("Multiplication (*): " + (num1*num2));
+                        System.out.println("Division (/): " + (num1/num2));
+                        System.out.println("Modulus (%): " + (num1%num2));
+                
+                        // Assignment Operators
+                        int value = 2;
+                        System.out.println("\n+=: " + (value += 9));
+                        System.out.println("-=: " + (value -= 5));
+                        System.out.println("*=: " + (value *= 2));
+                        System.out.println("/=: " + (value /= 3));
+                        System.out.println("%=: " + (value %= 5));
+                
+                        // Logical Operators
+                        boolean isTrue = true;
+                        boolean isFalse = false;
+                        System.out.println("\nLogical Operators:");
+                        System.out.println("&& (AND): " + (isTrue && isFalse));
+                        System.out.println("|| (OR): " + (isTrue || isFalse));
+                        System.out.println("!(NOT): " +(!isTrue));
+                
+                        // Relational Operators
+                        int x = 5;
+                        int y = 8;
+                        System.out.println("\nRelational Operators:");
+                        System.out.println("== (Equal to): " + (x == y));
+                        System.out.println("!= (Not equal to): " + (x != y));
+                        System.out.println("< (Less than): " + (x < y));
+                        System.out.println("> (Greater than): " + (x > y));
+                        System.out.println("<= (Less than or equal to): " + (x <= y));
+                        System.out.println(">= (Greater than or equal to): " +  (x >= y));
+                
+                        // Bitwise Operators
+                        int m = 5; // binary: 0101
+                        int n = 3; // binary: 0011
+                
+                        System.out.println("\nBitwise Operators:");
+                        System.out.println("& (AND): " + ( m & n));
+                        System.out.println("| (OR): " + (m | n));
+                        System.out.println("^ (XOR): " + (m^n));
+                        System.out.println("~ (NOT): " +( ~m));
+                        System.out.println(">> (Right Shift): " + (m >> 1));
+                        System.out.println("<< (Left Shift): " +( m << 1));
+                
+                        // Increment/Decrement Operators
+                        int count = 10;
+                        count++;
+                        int anotherCount = 7;
+                        anotherCount--;
+                
+                        System.out.println("\nIncrement/Decrement Operators:");
+                        System.out.println("count++ (Increment): " + count);
+                        System.out.println("anotherCount-- (Decrement): " + anotherCount);
+                
+                        // Ternary Conditional Operator
+                        int p = 10;
+                        int q = 5;
+                        int max = (p > q) ? p : q;
+                
+                        System.out.println("\nTernary Conditional Operator:");
+                        System.out.println("Max value: " + max);
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out>></button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div data-pym-src="https://www.jdoodle.com/embed/v0/6BB9"></div>
+        </div>
+    </div>
+</div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_datatypes">Prev</a>
+                <a class="btn btn-primary next" href="/java_scope">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+       <script src="js/chatbot.js"></script>
+</body>
+
+</html>

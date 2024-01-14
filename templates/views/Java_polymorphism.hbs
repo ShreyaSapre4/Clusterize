@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Polymorphism</title>
+</head>
+
+<body>
+   {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <h3>Polymorphism</h3>
+            <p>The term polymorphism is actual made of two greek words <i>poly</i> meaning many and <i>morphs</i> meaning forms. Polymorphism in Java is the ability of different classes to be treated as instances of a common superclass or interface. It allows you to work with objects of different types in a unified way, simplifying code and promoting flexibility and extensibility in software design.</p>
+            <p>To sum it up, polymorphism is basically performing an action in different ways. Java offers two types of polymorphism namely <b>Runtime polymorphism </b>and <b>Compile-time polymorphism</b></p>
+            <ol>
+                <li>
+                    <h4>Runtime polymorphism:</h4><p>Runtime polymorphism, also known as <b>method overriding</b>, is a more dynamic form of polymorphism. It occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. At runtime, the JVM determines which method to execute based on the actual type of the object being referenced, not the reference type.</p><p>This is like having a tool that can change its function based on what you're working on.</p>
+                    <h3>Example</h3>
+                    <div class="code_container">
+                        <div class="code_wrapper">
+                            <pre>
+                                <code id="code" class="language-Java">
+                                    class Animal {
+                                        void makeSound() {
+                                            System.out.println("The animal makes a sound.");
+                                        }
+                                    }
+                                    
+                                    class Dog extends Animal {
+                                        @Override
+                                        void makeSound() {
+                                            System.out.println("The dog barks.");
+                                        }
+                                    }
+                                    
+                                    class Cat extends Animal {
+                                        @Override
+                                        void makeSound() {
+                                            System.out.println("The cat meows.");
+                                        }
+                                    }
+                                    
+                                    public class MyClass {
+                                        public static void main(String[] args) {
+                                            Animal animal1 = new Dog(); // Upcasting
+                                            Animal animal2 = new Cat(); // Upcasting
+                                    
+                                            animal1.makeSound(); // Calls Dog's makeSound method
+                                            animal2.makeSound(); // Calls Cat's makeSound method
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it
+                        out >></button>
+        
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div data-pym-src="https://www.jdoodle.com/embed/v0/6C19"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <hr>
+                <li>
+                    <h4>Compile-time polymorphism:</h4><p>Also known as <b>method overloading</b>, compile-time polymorphism occurs when multiple methods within the same class have the same name but different parameter lists (number or types of parameters). The appropriate method to call is determined at compile-time based on the method's signature and the arguments passed during the method invocation. This allows you to provide multiple ways to interact with objects of a class, enhancing code readability and convenience.</p>
+                    <p> This is like using a tool with multiple settings. It happens when you have several methods in a class with the same name but different ways of using them.</p>
+                    <h3>Example</h3>
+                    <div class="code_container">
+                        <div class="code_wrapper">
+                            <pre>
+                                <code id="code" class="language-Java">
+                                    class Calculator {
+                                        // Method to add two integers
+                                        int add(int a, int b) {
+                                            return a + b;
+                                        }
+                                    
+                                        // Method to add three integers
+                                        int add(int a, int b, int c) {
+                                            return a + b + c;
+                                        }
+                                    
+                                        // Method to add two doubles
+                                        double add(double a, double b) {
+                                            return a + b;
+                                        }
+                                    }
+                                    
+                                    public class MyClass {
+                                        public static void main(String[] args) {
+                                            Calculator calculator = new Calculator();
+                                    
+                                            // Method overloading at compile-time
+                                            int sum1 = calculator.add(5, 10);
+                                            int sum2 = calculator.add(5, 10, 15);
+                                            double sum3 = calculator.add(3.5, 2.7);
+                                    
+                                            System.out.println("Sum 1: " + sum1);
+                                            System.out.println("Sum 2: " + sum2);
+                                            System.out.println("Sum 3: " + sum3);
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Try it
+                        out >></button>
+        
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                        aria-hidden="true" id="modal2">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div data-pym-src="https://www.jdoodle.com/embed/v0/6C1d"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            
+           
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_inheritence">Prev</a>
+                <a class="btn btn-primary next" href="/java_encapsulation">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+
+</html>

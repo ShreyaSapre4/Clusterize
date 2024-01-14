@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Loops</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_loops"><button class="btn btn-primary level-btn">Level: Easy</button></a>
+            </div>
+    
+            <div class="iframe-container">
+                <iframe
+                src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Loops</h3>
+            <p>Loops in Java are control structures that allow you to execute a block of code repeatedly based on a
+                certain condition. They are fundamental for automating repetitive tasks and iterating over collections
+                of data. There are three primary types of loops in Java:</p>
+            <ol>
+                <li>
+                    <h5>for Loop:</h5>
+                    <p>The for loop is used when you know the number of iterations in advance.
+                        It consists of three parts: initialization, condition, and increment (or decrement).
+                        The loop continues executing until the condition becomes false.</p>
+                </li>
+                <li>
+                    <h5>while Loop:</h5>
+                    <p>The while loop is used when you may not know the number of iterations in advance, and the loop
+                        continues executing as long as a specified condition is true.
+                        It checks the condition before each iteration.</p>
+                </li>
+                <li>
+                    <h5>do-while Loop:</h5>
+                    <p>
+
+                        The do-while loop is similar to the while loop, but it guarantees that the loop body will
+                        execute at least once, as it checks the condition after executing the loop body.
+                        It is useful when you want to execute the loop body at least once before checking the condition.
+                    </p>
+                </li>
+            </ol>
+            <hr>
+            <p>Loops statements include some of the following concepts</p>
+            <h5>break statement</h5>
+            <p> Used to exit a loop prematurely, immediately terminating the loop's execution.</p>
+            <h5>continue Statement:</h5>
+            <p> Skips the current iteration of a loop and continues with the next iteration.</p>
+            <h5>Nested Loops: </h5>
+            <p>You can have loops inside other loops, allowing for complex looping patterns.</p>
+            <h5>Infinite Loops: </h5>
+            <p>Be cautious of creating loops that never terminate, as they can lead to program hangs or crashes.</p>
+            <h3>Example</h3>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            //code to show loops
+                            public class LoopDemo {
+                                public static void main(String[] args) {
+                                    // For Loop
+                                    System.out.println("For Loop:");
+                                    for (int i = 1; i $lt= 5; i++) {
+                                        System.out.println("Iteration " + i);
+                                    }
+                            
+                                    // While Loop
+                                    System.out.println("\nWhile Loop:");
+                                    int j = 1;
+                                    while (j $lt= 5) {
+                                        System.out.println("Iteration " + j);
+                                        j++;
+                                    }
+                            
+                                    // Do-While Loop
+                                    System.out.println("\nDo-While Loop:");
+                                    int k = 1;
+                                    do {
+                                        System.out.println("Iteration " + k);
+                                        k++;
+                                    } while (k $lt= 5);
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out>></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6ykv"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_conditionals_basic">Prev</a>
+                <a class="btn btn-primary next" href="/java_arrays_basic">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/java_prism.js"></script>
+       <script src="js/chatbot.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+
+</html>

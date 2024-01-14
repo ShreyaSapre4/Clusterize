@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>SIH</title>
+    <style>
+        .fade-in-left {
+            -webkit-animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+
+        .fade-in-left2 {
+            -webkit-animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: fade-in-left 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+
+
+        @-webkit-keyframes fade-in-left {
+            0% {
+                -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in-left {
+            0% {
+                -webkit-transform: translateX(-50px);
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fade-in-left2 {
+            0% {
+                -webkit-transform: translateX(-150px);
+                transform: translateX(-150px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in-left {
+            0% {
+                -webkit-transform: translateX(-150px);
+                transform: translateX(-150px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        body {
+            background: linear-gradient(180deg, #6FB1ED 0%, rgba(251, 253, 255, 0.00) 30%);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+
+        nav ul li a {
+            color: #f6ce08;
+            font-weight: bold;
+            margin-left: 10%;
+            width: 10%;
+        }
+
+        nav {
+            /* background: transparent; */
+            z-index: 900;
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(180deg, #6FB1ED 0%, rgba(251, 253, 255, 0.00) 100%);
+            margin-top: -13vh;
+            padding: 20%;
+            display: flex;
+        }
+
+        .hero h1 {
+            margin-left: -15%;
+            color: #f6ce08;
+            font-weight: 800;
+            font-size: 50px;
+        }
+
+        .hero h2 {
+            color: #f6ce08;
+            font-weight: 800;
+            font-size: 40px;
+        }
+
+        .btn-container {mg
+            display: flex;
+        }
+
+        .card-deck {
+            margin-bottom: 20vh;
+            padding: 5%;
+        }
+
+        .heroimg {
+            height: 300px;
+            width: 300px;
+            background-image: url('/images/heroImg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: 20%;
+            margin-right: -20%;
+        }
+
+        .card-container {
+            padding: 5%;
+            margin-top: -11%;
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#" style="color: #f6ce08; font-weight: 900; font-size: 40px;">Clusterize Learning</a>
+        <!-- <div class=" mt-47"></div> -->
+        <button style="color: black;" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span style="font-size: 2em; color: white;" class="navbar-toggler-icon">=</span>
+        </button>
+        <div style="margin-right: 60%;"></div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li style="margin-right: 6%;" class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="margin-right: 6%;" class="nav-item dropdown">
+                    {{!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Python
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Basic</a>
+                        <a class="dropdown-item" href="#">Intermediate</a>
+                        <a class="dropdown-item" href="#">Crash Course</a>
+                    </div> --}}
+                    </li>
+                {{!-- <a href="/java_platforms">
+                    <li style="margin-right: 6%;" class="nav-item dropdown">
+                    <a class="nav-link" href="/java_platforms" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Java
+                    </a>
+                    </li>
+                </a> --}}
+
+                <li style="margin-right: 6%;" class="nav-item dropdown">
+                    {{!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        c++
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Basic</a>
+                        <a class="dropdown-item" href="#">Intermediate</a>
+                        <a class="dropdown-item" href="#">Crash Course</a>
+                    </div> --}}
+                </li>
+                <li style="margin-right: 6%; width: 5;" class="nav-item active">
+                    <a class="nav-link" style="width: 5%;" href="https://ayush-dhawan.github.io/myQuizBot/index.html">Quiz<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h1 class="fade-in-left">Your Gateway </h1>
+            <h1 class="fade-in-left2" style="margin-left: 12%;">to Coding Excellence</h1>
+            {{!-- <h2 class="fade-in-left">Without the cost</h2> --}}
+        </div>
+        <div data-aos="zoom-out-down" data-aos-duration="1000" class="heroimg"></div>
+    </div>
+
+    <div class="card-deck">
+
+        <div class="card" data-aos="fade-right" data-aos-duration="1000">
+            <img style="margin-bottom: 10vh;" src="images/personalTeaching.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Personalised Learning </h5>
+                <p class="card-text">Courses are designed to suit different understanding levels and programming
+                    experience</p>
+            </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <img style="height: 400px;" src="images/Screenshot 2023-09-05 135719.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Get Exam ready</h5>
+                <p class="card-text">Descriptive and complete coverage of entire syllabus based on whats required to
+                    master programming and ace exams </p>
+            </div>
+        </div>
+        <div class="card" data-aos="fade-left" data-aos-duration="1000">
+            <img src="images/AI_assistant.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">AI assistance</h5>
+                <p class="card-text">An A.I. based chat bot which assists you in any difficulty you encounter on the way and also
+                    helps in testing your knowledge via quizzes</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        {{!--  --}}
+
+        <div data-aos="zoom-out" data-aos-duration="1000"
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col-auto d-none d-lg-block mx-4">
+             
+                <div class="bd-placeholder-img"
+                    style="height: 400px; width: 400px; background-image: url('images/java_icon.png'); background-position: center; background-size: cover;">
+                </div>
+            </div>
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-secondary">01.</strong>
+                <h3 class="mb-0">Learn Java</h3>
+                <p class="card-text mb-auto">
+                    Java is a general-purpose, class-based, object-oriented programming language. It is a popular
+                    language for developing web applications, mobile applications, desktop applications, and enterprise
+                    software. Java is also used for scientific computing, game development, and big data processing.
+
+                    Java is considered to be a relatively beginner-friendly language. Its syntax is similar to C++ and
+                    C#, so it is easy for programmers who are familiar with those languages to pick up. Java also has a
+                    large community of users and a wide range of resources available for beginners.
+
+                </p>
+                <strong class="d-inline-block mb-2 text-secondary">Relevant Applications: Web development, mobile
+                    development, desktop applications, game development</strong>
+
+               <a href="/java_platforms">
+                    <div class="btn-container">
+                        <button class="btn btn-primary" style="width: 55vw; margin-right: 5%;">
+                            {{!-- <a href="/java_platforms" style="text-decoration: none; color: white">Start Now!</a> --}}
+                            <p style="text-decoration: none; color: white; margin: 0">Start Now!</p>
+                        </button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        {{!-- <div data-aos="zoom-out" data-aos-duration="1000"
+            class=" row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-secondary">02.</strong>
+                <h3 class="mb-0">Learn Python</h3>
+                <p class="card-text mb-auto">
+
+                    Python is a general-purpose, high-level programming language. It is known for its simple,
+                    easy-to-learn syntax and its powerful libraries. Python is used for a wide variety of tasks,
+                    including: Web development Software development Data science Machine learning Artificial
+                    intelligence Scientific computing Automation. Python is considered to be a very beginner-friendly
+                    language. Its simple syntax makes it easy to learn, and its large community of users provides a lot
+                    of resources for beginners.
+                </p>
+                <strong class="d-inline-block mb-2 text-secondary">Relevant Applications: DSA, Communication Systems in
+                    IOT, data science, machine learning</strong>
+                <div class="btn-container">
+                    <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                        <a href="#" style="text-decoration: none; color: white"> Basic</a>
+                    </button>
+                    <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                        <a href="#" style="text-decoration: none; color: white">Intermediate</a>
+                    </button>
+                    <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                        <a href="#" style="text-decoration: none; color: white">Crash Course</a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-auto d-none d-lg-block mx-4">
+                <!-- <img
+                src="Python.jpg"
+                alt=""
+                class="bd-placeholder-img"
+                width="400"
+                height="400"
+              /> -->
+                <div class="bd-placeholder-img"
+                    style="height: 400px; width: 400px; background-image: url('Python.jpg'); background-position: center; background-size: cover;">
+                </div>
+            </div>
+        </div> --}}
+
+
+        {{!-- <div class="cards">
+            <div data-aos="zoom-out" data-aos-duration="1000"
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-secondary">03.</strong>
+                    <h3 class="mb-0">Learn C++</h3>
+
+                    <p class="card-text mb-auto">C++ is a general-purpose, compiled, multi-paradigm, statically typed,
+                        and object-oriented programming language. It was developed by Bjarne Stroustrup as an extension
+                        of the C programming language, and it retains most of C's syntax. C++ has been used to develop a
+                        wide variety of applications, including operating systems, compilers, databases, and video
+                        games.</p>
+                    <strong class="d-inline-block mb-2 text-secondary">Relevant Applications: Operating systems,
+                        microprocessor pragramming, compilers, game development</strong>
+                    <div class="btn-container">
+                        <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                            <a href="#" style="text-decoration: none; color: white"> Basic</a>
+                        </button>
+                        <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                            <a href="#" style="text-decoration: none; color: white">Intermediate</a>
+                        </button>
+                        <button class="btn btn-primary" style="width: 10vw; margin-right: 5%;">
+                            <a href="#" style="text-decoration: none; color: white">Crash Course</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-lg-block mx-4">
+                    <!-- <img src="tcet_medical.jpeg" alt="" class="bd-placeholder-img" width="400" height="400"> -->
+                    <div class="bd-placeholder-img"
+                        style="height: 400px; width: 400px; background-image: url('cpppp.png'); background-position: center; background-size: cover;">
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+
+    </div>
+
+    </center>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        window.chatbaseConfig = {
+            chatbotId: "4emOJ5EsysxcMat5J81No",
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" id="4emOJ5EsysxcMat5J81No" defer>
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 3000,
+            once: true,
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

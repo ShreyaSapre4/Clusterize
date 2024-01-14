@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java syntax</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}       <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <div class="iframe-container">
+                <iframe
+                src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+                <button class="click"><span>🤖</span></button>
+              </div>
+            <h3>Trees</h3>
+            <p>Trees in data structures are hierarchical data structures composed of nodes connected by edges. They
+                represent a branching structure with a single root node leading to multiple child nodes. Trees are
+                non-linear and versatile, allowing for various applications across computer science.</p>
+            <div style="display: flex;">
+                <div>
+                    <h4>Elements of trees</h4>
+                    <ol>
+                        <li>
+                            <h5>Root Node: </h5>The topmost node of the tree, serving as the starting point.
+                        </li>
+                        <li>
+                            <h5>Parent and Child Nodes: </h5>Nodes connected by edges, where one node is directly
+                        </li>
+                        <li>
+                            <h5>Leaf Nodes:</h5>Nodes that have no children; they are the endpoints of the tree
+                            branches.
+                        </li>
+                        <li>
+                            <h5>Depth and Height:</h5>Depth refers to the level of a node from the root, while height is
+                            the maximum depth of the tree.
+                        </li>
+                    </ol>
+                </div>
+                <img src="./trees.jpg" width="40%">
+            </div>
+            <div>
+                <h4>Types of trees</h4>
+                Trees come in various forms, each with unique properties and applications
+                <ol>
+                    <li>
+                        <h5>Binary Tree: </h5>A tree where each node has at most two children, typically referred to as
+                        the left child and the right child.
+                    </li>
+                    <li>
+                        <h5>Binary Search Tree (BST): </h5>A type of binary tree where the left child of a node contains
+                        values less than the node's value, and the right child contains values greater than the node's
+                        value. This allows for efficient searching, insertion, and deletion operations.
+                    </li>
+                    <li>
+                        <h5>B-tree: </h5>A self-balancing tree structure that maintains sorted data and allows searches,
+                        sequential access, insertions, and deletions in logarithmic time.
+                    </li>
+                    <li>
+                        <h5>N-ary Tree:</h5>A tree where each node can have more than two children, often used to
+                        represent hierarchical data structures.
+                    </li>
+                    <li>
+                        <h5>AVL tree:</h5>AVL trees are self-balancing binary search trees where the balance factor of
+                        each node is maintained within a certain range.
+                    </li>
+                </ol>
+                <div>
+                    <h4>Tree traversal</h4>
+                    <p>
+                        Tree traversal refers to the process of visiting all the nodes in a tree data structure in a
+                        specific order. There are mainly three types of tree traversal:</p>
+                    <ol>
+                        <li>
+                            <h5>Inorder Traversal: </h5>In an inorder traversal of a binary tree, the nodes are visited
+                            in the order of (Left, Root, Right). This traversal is commonly used for binary search trees
+                            (BST) as it gives nodes in ascending order when applied to a BST.
+                        </li>
+                        <li>
+                            <h5>Preorder Traversal:</h5>In a preorder traversal, the nodes are visited in the order of
+                            (Root, Left, Right). This traversal is useful for making a copy of the tree and is also used
+                            to create prefix expressions (Polish notation) for expression trees.
+                        </li>
+                        <li>
+                            <h5>Postorder Traversal: </h5>Postorder traversal visits nodes in the order of (Left, Right,
+                            Root). This traversal is useful for deleting nodes from a tree, as it ensures that a node's
+                            children are deleted before the node itself.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+                <h5>Binary tree</h5>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            import java.security.interfaces.EdECPublicKey;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Node{
+    protected int value;
+    protected Node left;
+    protected Node right;
+   
+
+    public Node(){
+        this.left = null;
+        this.right = null;
+        }
+    public Node(int value){
+        this.value = value;
+        this.right = null;
+        this.left = null;
+    }
+}
+
+class Tree{
+    Node root = new Node();
+
+    public Tree(){
+        this.root = null;
+    }
+
+    public void insert(int val){
+        Node newnode = new Node(val);
+        if(root == null){
+            root = newnode;
+           
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node presentNode = queue.remove();
+            if(presentNode.left == null){
+                presentNode.left = newnode;
+                break;
+            }
+             if(presentNode.right == null){
+                presentNode.right = newnode;
+                break;
+            }else{
+                queue.add(presentNode.left);
+                queue.add(presentNode.right);
+            }
+        }
+        
+        
+    }
+
+
+public void PreOrder(Node node){
+    if(node == null){
+        return;
+    }
+    System.out.print(node.value+" ");
+    PreOrder(node.left);
+    PreOrder(node.right);
+}
+
+
+
+public Node levelOrder(){
+
+Queue<Node> queue = new LinkedList<>();
+queue.add(root);
+
+Node presentNode = null;
+while(!queue.isEmpty()){
+ presentNode = queue.remove();
+    System.out.print(presentNode.value+" ");
+
+    if(presentNode.left != null){
+        queue.add(presentNode.left);
+    }
+    
+      if(presentNode.right != null){
+        queue.add(presentNode.right);
+      }
+    
+}
+return presentNode;
+}
+
+public void search(int value){
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+
+    
+    while(!queue.isEmpty()){
+       Node presentNode = queue.remove();
+        if(presentNode.value == value){
+            System.out.println("value found");
+            return;
+        }
+       else{
+        if(presentNode.left != null){
+            queue.add(presentNode.left);
+            }
+            if(presentNode.right != null){
+                queue.add(presentNode.right);
+            }
+       }
+    }
+    System.out.println("value not found");
+   
+}
+
+public Node getDeepestnode(){
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+    Node present = null;
+
+    while(!queue.isEmpty()){
+        present = queue.remove();
+
+        if(present.left != null){
+            queue.add(present.left);
+        }
+        if(present.right != null){
+            queue.add(present.right);
+        }
+    }
+    
+    return present;
+}
+
+public void deleteDeepestNode(){
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+
+    Node presentNode = null , previousNode = null;
+
+    while(!queue.isEmpty()){
+        previousNode = presentNode;
+        presentNode = queue.remove();
+
+        if(presentNode.right == null){
+            presentNode.left = null;
+            return;
+        }
+        if(presentNode.left == null){
+            previousNode.right = null;
+            return;
+        }
+        queue.add(presentNode.left);
+        queue.add(presentNode.right);
+    }
+}
+
+public ArrayList<ArrayList<Node>> levelOrder_listed(Node root){
+    if (root == null) return null;
+
+    ArrayList<ArrayList<Node>> list = new ArrayList<>();
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+
+    while(!queue.isEmpty()){
+        ArrayList<Node> sublist = new ArrayList<>();
+
+        for(int i = queue.size()-1; i >= 0; i--){
+            if(queue.peek().left != null) queue.add(queue.peek().left);
+            if(queue.peek().right != null) queue.add(queue.peek().right);
+            sublist.add(queue.remove());
+        }
+        list.add(sublist);
+    }
+    
+    return list;
+
+}
+
+
+public void deleteNode(int val){
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+
+    while(!queue.isEmpty()){
+        Node currnode = queue.remove();
+         if(currnode.value == val){
+            currnode.value = getDeepestnode().value;
+            deleteDeepestNode();
+            System.out.println("deleted..");
+            return;
+         }
+         if(currnode.left != null){
+            queue.add(currnode.left);
+         }
+         if(currnode.right!=null){
+            queue.add(currnode.right);
+         }
+    }
+    System.out.println("value not found..");
+}
+
+}
+
+public class BinaryTree {
+    public static void main(String[] args) {
+        Tree tree = new Tree();
+        tree.insert(10);
+        tree.insert(20);
+        tree.insert(50);
+        tree.insert(90);
+
+        tree.levelOrder();
+      //  tree.deleteNode(10);
+        System.out.println(tree.levelOrder_listed(tree.root));
+        //tree.search(50);
+        //System.out.println(tree.getDeepestnode().value);
+        
+    }
+}
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2"
+                    data-target=".bd-example-modal-lg">Check
+                    example >></button>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal2">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" >
+                            <div
+                                data-pym-src="https://www.jdoodle.com/plugin/v0/d898f7f5be1e8369c48fac1706564825/a41811c52deab4b00ddd0e814b4e48c0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            <h5>Binary search tree (BST)</h5>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+
+class Node{
+    int value;
+    Node left;
+    Node right;
+
+    public Node(int value){
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+    public Node(){
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST{
+    Node root;
+    public BST(){
+        this.root = null;
+    }
+    
+    public void insert(int value){
+        Node newnode = new Node(value);
+
+        if(root == null){
+            root = newnode;
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node currnode = queue.remove();
+            if(value <= currnode.value){
+                if(currnode.left == null){
+                    currnode.left = newnode;
+                    System.out.println("value added");
+                    break;
+                }
+                queue.add(currnode.left);
+            }
+            else{
+                if(value > currnode.value){
+                    if(currnode.right == null){
+                        currnode.right = newnode;
+                        System.out.println("value added");
+                        break;
+                    }
+                    queue.add(currnode.right);
+                }
+            }
+        }
+        
+    }
+    
+
+    public void levelorder(){
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        
+        Node currnode = null;
+        while(!queue.isEmpty()){
+             currnode = queue.remove();
+            System.out.print(currnode.value+" ");
+
+            if(currnode.left != null){
+                queue.add(currnode.left);
+            }
+             if(currnode.right != null){
+                queue.add(currnode.right);
+            }
+        }
+    }
+
+    public Node getDeepestnode(){
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        
+        Node currnode = null;
+        while(!queue.isEmpty()){
+             currnode = queue.remove();
+
+            if(currnode.left != null){
+                queue.add(currnode.left);
+            }
+             if(currnode.right != null){
+                queue.add(currnode.right);
+            }
+        }
+        return currnode;
+    }
+
+    public void deleteDeepestNode(){
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        Node prev = null; Node present = null;
+
+        while(!queue.isEmpty()){
+            prev = present;
+            present = queue.remove();
+            if(present.right == null){
+                present.left = null;
+                return;
+            }
+            if(present.left == null){
+                prev.right = null;
+                return;
+            }
+            if(getDeepestnode().value < present.value){
+                queue.add(present.left);
+            }else{
+                queue.add(present.right);
+            }
+        }
+    }
+
+    public void delete(int val){
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        Node presentnode = null;
+        while(!queue.isEmpty()){
+            presentnode = queue.remove();
+            if(presentnode.value == val){
+                presentnode.value = getDeepestnode().value;
+                deleteDeepestNode();
+                return;
+            }
+            if(val < presentnode.value && presentnode.left != null){
+                queue.add(presentnode.left);
+            }else if(val > presentnode.value && presentnode.right != null){
+                queue.add(presentnode.right);
+            }
+
+        }
+    }
+}
+
+public class BinarySearchTree {
+    public static void main(String[] args) {
+        BST tree = new BST();
+        tree.insert(10);
+        tree.insert(5);
+        tree.insert(89);
+        tree.insert(54);
+        tree.insert(59);
+        tree.insert(52);
+        //System.out.println(tree.root.right.left.value);
+        tree.levelorder();
+        System.out.println();
+        tree.delete(10); 
+        tree.levelorder();
+        //System.out.println(tree.root.value);
+    }
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target=".bd-example-modal-lg">Check
+                    example >></button>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div
+                                data-pym-src="https://www.jdoodle.com/plugin/v0/d898f7f5be1e8369c48fac1706564825/cfdf1b9943ca84082190be5891e53d6b">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page_change">
+                    <a class="btn btn-primary prev" href="/java_linkedlist">Prev</a>
+                    <a class="btn btn-primary next" href="/java_graphs">Next</a>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            </script>
+            <script src="js/chatbot.js"></script>
+            <script src="js/java_prism.js"></script>
+            <script>
+                function show_beginner() {
+                    document.getElementById('Beginner').style.display = 'block';
+                    document.getElementById('down_b').style.display = 'none';
+                    document.getElementById('up_b').style.display = 'inline';
+                }
+                function hide_beginner() {
+                    document.getElementById('Beginner').style.display = 'none';
+                    document.getElementById('down_b').style.display = 'inline';
+                    document.getElementById('up_b').style.display = 'none';
+                }
+                function show_intermediate() {
+                    document.getElementById('Intermediate').style.display = 'block';
+                    document.getElementById('down_i').style.display = 'none';
+                    document.getElementById('up_i').style.display = 'inline';
+                }
+                function hide_intermediate() {
+                    document.getElementById('Intermediate').style.display = 'none';
+                    document.getElementById('down_i').style.display = 'inline';
+                    document.getElementById('up_i').style.display = 'none';
+                }
+                function show_ds() {
+                    document.getElementById('data_structures').style.display = 'block';
+                    document.getElementById('down_ds').style.display = 'none';
+                    document.getElementById('up_ds').style.display = 'inline';
+                }
+                function hide_ds() {
+                    document.getElementById('data_structures').style.display = 'none';
+                    document.getElementById('down_ds').style.display = 'inline';
+                    document.getElementById('up_ds').style.display = 'none';
+                }
+                function show_oops() {
+                    document.getElementById('OOPS').style.display = 'block';
+                    document.getElementById('down_oops').style.display = 'none';
+                    document.getElementById('up_oops').style.display = 'inline';
+                }
+                function hide_oops() {
+                    document.getElementById('OOPS').style.display = 'none';
+                    document.getElementById('down_oops').style.display = 'inline';
+                    document.getElementById('up_oops').style.display = 'none';
+                }
+                function show() {
+                    document.getElementById('menu').style.transform = 'translate(260px)'
+                    document.getElementById('hide').style.display = 'block';
+                    document.getElementById('show').style.display = 'none';
+                    document.getElementById('main_content').style.marginLeft = '260px'
+                }
+                function hide() {
+                    document.getElementById('menu').style.transform = 'translate(-250px)';
+                    document.getElementById('show').style.display = 'block';
+                    document.getElementById('main_content').style.marginLeft = '0px'
+                }
+            </script>
+</body>
+
+</html>

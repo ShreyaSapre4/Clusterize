@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Strings</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_string_basic"><button class="btn btn-primary level-btn">Level: Intermediate</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                  src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>String</h3>
+            <p>Strings are a fundamental data type in Java and are widely used for representing and manipulating text in Java programs. Understanding how to work with strings effectively is essential for many programming tasks.</p>
+            <p>In Java, strings are represented by the String class, which is part of the <b>Java.lang</b> package. Strings in Java are immutable, which means their values cannot be changed after they are created. When you perform operations on a string, you are creating a new string rather than modifying the original one. This immutability has important implications for memory management and thread safety.Java strings are based on Unicode, which allows them to represent characters from different languages and scripts.</p>
+            <p>While strings are immutable, Java provides mutable alternatives for efficient string manipulation. <b>StringBuffer</b> and <b>StringBuilder</b> classes can be used when you need to build or modify strings frequently because they are more memory-efficient for such operations.</p>
+            <hr>
+            <h3>String methods</h3>
+            <ol>    
+                <li>
+                    <h5>length():</h5><p>Returns the length (number of characters) of the string.</p>
+                </li>
+                <li>
+                    <h5>charAt(int index):</h5><p>Returns the character at the specified index in the string.</p>
+                </li>
+                <li>
+                    <h5>concat(String str):</h5><p>Concatenates the specified string to the end of the current string.</p>
+                </li>
+                <li>
+                    <h5>equals(Object obj):</h5> <p>Compares the content of two strings for equality.</p>
+                </li>
+                <li>
+                    <h5>compareTo(String anotherString):</h5> <p>Compares two strings lexicographically and returns an integer that indicates their relative order.</p>
+                </li>
+                <li>
+                    <h5>substring(int beginIndex, endIndex): </h5><p>Returns a new string that is a substring of the original string, starting from the specified index to endindex -1</p>
+                </li>
+                <li>
+                    <h5>indexOf(int ch): </h5><p>Returns the index of the first occurrence of the specified character in the string(even a string can be passed as a parameter to check the first occurence of the string)</p>
+                </li>
+                <li>
+                    <h5>trim():</h5> <p>Removes leading and trailing whitespace (spaces, tabs, etc.) from the string.</p>
+                </li>
+                <li>
+                    <h5>replace(char oldChar, char newChar):</h5><p> Replaces all occurrences of oldChar with newChar in the string.</p>
+                </li>
+            </ol>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            public class MyClass {
+                                public static void main(String[] args) {
+                                    // Initialize a sample string
+                                    String text = "   Hello, World!   ";
+                            
+                                    // Method 1: length()
+                                    int length = text.length();
+                                    System.out.println("1. Length of the string: " + length);
+                            
+                                    // Method 2: charAt(int index)
+                                    char characterAtIndex = text.charAt(7);
+                                    System.out.println("2. Character at index 7: " + characterAtIndex);
+                            
+                                    // Method 3: concat(String str)
+                                    String concatenatedString = text.concat(" How are you?");
+                                    System.out.println("3. Concatenated string: " + concatenatedString);
+                            
+                                    // Method 4: equals(Object obj)
+                                    String otherString = "   Hello, World!   ";
+                                    boolean isEqual = text.equals(otherString);
+                                    System.out.println("4. Strings are equal: " + isEqual);
+                            
+                                    // Method 5: compareTo(String anotherString)
+                                    int compareResult = text.compareTo("Hello, Java!");
+                                    System.out.println("5. Comparison result: " + compareResult);
+                            
+                                    // Method 6: substring(int beginIndex, endIndex)
+                                    String subString = text.substring(7, 12);
+                                    System.out.println("6. Substring: " + subString);
+                            
+                                    // Method 7: indexOf(int ch)
+                                    int indexOfComma = text.indexOf(',');
+                                    System.out.println("7. Index of comma: " + indexOfComma);
+                            
+                                    // Method 8: trim()
+                                    String trimmedString = text.trim();
+                                    System.out.println("8. Trimmed string: " + trimmedString);
+                            
+                                    // Method 9: replace(char oldChar, char newChar)
+                                    String replacedString = text.replace('o', '0');
+                                    System.out.println("9. Replaced string: " + replacedString);
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6yk8"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_input">Prev</a>
+                <a class="btn btn-primary next" href="/java_conditionals">Next</a>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/java_prism.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '260px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+</html>

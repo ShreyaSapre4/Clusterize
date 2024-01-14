@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Scope</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="/java_queue"><button class="btn btn-primary level-btn">Level: Easy</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                src="https://codellama-codellama-13b-chat.hf.space"   
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Queue</h3>
+            <p>A queue is a linear data structure in Java (and in programming in general) that follows the First-In-First-Out (FIFO) principle. This means that the element that is added first to the queue is the one that gets removed first. </p>
+            <p>In Java, queues are typically implemented using interfaces and classes from the <b>java.util package</b>, with two commonly used implementations: LinkedList and PriorityQueue</p>
+            <p>Imagine a queue of people waiting in line at a ticket counter or a bus stop – the person who arrives first gets served first.</p>
+            <hr>
+            <h3>Queue methods</h3>
+            <p><b>Enqueue (Add):</b> You can add elements to the rear (end) of the queue using the offer() method in the Queue interface or the add() method, which is available in both the Queue and LinkedList classes.</p>
+            <p><b>Dequeue (Remove):</b> You can remove and retrieve elements from the front (head) of the queue using the poll() method in the Queue interface or the remove() method, which is available in both the Queue and LinkedList classes. These methods return null if the queue is empty.</p>
+            <p><b>Peek (Retrieve):</b> To retrieve the element at the front of the queue without removing it, you can use the peek() method. This method returns null if the queue is empty.</p>
+            <p><b>size():</b>You can check the number of elements in the queue using the size() method .</p>
+            <p><b>isEmpty():</b>check if the queue is empty using the isEmpty() method.</p>
+            <p><b>Priority Queue (PriorityQueue)</b>: While the standard Queue implementations maintain elements in the order they were added, you can also use a PriorityQueue if you want elements to be stored based on their natural order (e.g., numbers in ascending order) or a custom comparator.</p>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            Queue<Integer> priorityQueue = new PriorityQueue<>();<br>
+                                priorityQueue.offer(3);<br>
+                                priorityQueue.offer(1);<br>
+                                priorityQueue.offer(2); <br>                    
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <hr>
+
+            
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            import java.util.LinkedList;
+                            import java.util.Queue;
+                            
+                            public class QueueExample {
+                                public static void main(String[] args) {
+                                    // Create a queue using LinkedList
+                                    Queue<String> queue = new LinkedList<>();
+                            
+                                    // Add elements to the queue (enqueue)
+                                    queue.offer("Alice");
+                                    queue.offer("Bob");
+                                    queue.offer("Charlie");
+                            
+                                    // Display the queue
+                                    System.out.println("Queue: " + queue);
+                            
+                                    // Get the size of the queue
+                                    int size = queue.size();
+                                    System.out.println("Queue Size: " + size);
+                            
+                                    // Check if the queue is empty
+                                    boolean isEmpty = queue.isEmpty();
+                                    System.out.println("Is Queue Empty? " + isEmpty);
+                            
+                                    // Peek at the front element without removing it
+                                    String frontElement = queue.peek();
+                                    System.out.println("Front Element (Peek): " + frontElement);
+                            
+                                    // Remove and retrieve the front element (dequeue)
+                                    String removedElement = queue.poll();
+                                    System.out.println("Removed Element (Poll): " + removedElement);
+                            
+                                    // Display the updated queue
+                                    System.out.println("Updated Queue: " + queue);
+                            
+                                    // Check if a specific element is in the queue
+                                    boolean containsBob = queue.contains("Bob");
+                                    System.out.println("Queue Contains 'Bob'? " + containsBob);
+                            
+                                    // Clear the queue
+                                    queue.clear();
+                                    System.out.println("Cleared Queue: " + queue);
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6BNs"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_stack">Prev</a>
+                <a class="btn btn-primary next" href="/java_linkedlist">Next</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="js/java_prism.js"></script>
+       <script src="js/chatbot.js"></script>
+    <script>
+        function show_beginner() {
+            document.getElementById('Beginner').style.display = 'block';
+            document.getElementById('down_b').style.display = 'none';
+            document.getElementById('up_b').style.display = 'inline';
+        }
+        function hide_beginner() {
+            document.getElementById('Beginner').style.display = 'none';
+            document.getElementById('down_b').style.display = 'inline';
+            document.getElementById('up_b').style.display = 'none';
+        }
+        function show_intermediate() {
+            document.getElementById('Intermediate').style.display = 'block';
+            document.getElementById('down_i').style.display = 'none';
+            document.getElementById('up_i').style.display = 'inline';
+        }
+        function hide_intermediate() {
+            document.getElementById('Intermediate').style.display = 'none';
+            document.getElementById('down_i').style.display = 'inline';
+            document.getElementById('up_i').style.display = 'none';
+        }
+        function show_ds() {
+            document.getElementById('data_structures').style.display = 'block';
+            document.getElementById('down_ds').style.display = 'none';
+            document.getElementById('up_ds').style.display = 'inline';
+        }
+        function hide_ds() {
+            document.getElementById('data_structures').style.display = 'none';
+            document.getElementById('down_ds').style.display = 'inline';
+            document.getElementById('up_ds').style.display = 'none';
+        }
+        function show_oops() {
+            document.getElementById('OOPS').style.display = 'block';
+            document.getElementById('down_oops').style.display = 'none';
+            document.getElementById('up_oops').style.display = 'inline';
+        }
+        function hide_oops() {
+            document.getElementById('OOPS').style.display = 'none';
+            document.getElementById('down_oops').style.display = 'inline';
+            document.getElementById('up_oops').style.display = 'none';
+        }
+        function show() {
+            document.getElementById('menu').style.transform = 'translate(260px)'
+            document.getElementById('hide').style.display = 'block';
+            document.getElementById('show').style.display = 'none';
+            document.getElementById('main_content').style.marginLeft = '260px'
+        }
+        function hide() {
+            document.getElementById('menu').style.transform = 'translate(-250px)';
+            document.getElementById('show').style.display = 'block';
+            document.getElementById('main_content').style.marginLeft = '0px'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Scope</title>
+</head>
+
+<body>
+    {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <div class="heading">
+                <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                <a href="../java_basic/java_stack.html"><button class="btn btn-primary level-btn">Level: Intermediate</button></a>
+            </div>
+            <div class="iframe-container">
+                <iframe
+                  src="https://codellama-codellama-13b-chat.hf.space"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <button class="click"><span>🤖</span></button>
+            <h3>Stack</h3>
+            <p>The data structure "stack" is a common abstract data type used for organizing and managing data in a last-in-first-out (LIFO) manner. It is implemented as a linear data structure with two primary operations:
+
+                <br>Push: Adding an item to the top of the stack.
+                <br>Pop: Removing and returning the item from the top of the stack.
+                In Java, you can implement a stack using various data structures, such as arrays or linked lists. Java provides a built-in class called java.util.Stack, which is a legacy collection class that implements a stack. However, it's recommended to use the more modern java.util.Deque interface (Deque stands for "double-ended queue") for stack operations. You can use the LinkedList class as an implementation of Deque.</p>
+                <hr>
+                <h3>Stack methods</h3>
+                <p><b>push(E item):</b> Pushes an item onto the top of the stack.</p>
+                <p><b>pop():</b> Removes and returns the item at the top of the stack.</p>
+                <p><b>peek():</b> Returns the item at the top of the stack without removing it.</p>
+                <p><b>empty():</b> Checks if the stack is empty.</p>
+                <p><b>search(Object o):</b> Searches for an item in the stack and returns its 1-based position, or -1 if not found.</p>
+            
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            import java.util.Deque;
+                            import java.util.LinkedList;
+
+                            public class StackExample {
+                                public static void main(String[] args) {
+                                    Deque<Integer> stack = new LinkedList<>();
+
+                                    // Pushing elements onto the stack
+                                    stack.push(1);
+                                    stack.push(2);
+                                    stack.push(3);
+
+                                    // Popping elements from the stack
+                                    while (!stack.isEmpty()) {
+                                        System.out.println("Popped: " + stack.pop());
+                                    }
+                                }
+                            }
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/embed/v0/6BMs"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_exceptionHandling">Prev</a>
+                <a class="btn btn-primary next" href="/java_queues">Next</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="./prism.js"></script>
+        <script src="./js/chatbot.js"></script>
+    <script>
+        function show_beginner() {
+            document.getElementById('Beginner').style.display = 'block';
+            document.getElementById('down_b').style.display = 'none';
+            document.getElementById('up_b').style.display = 'inline';
+        }
+        function hide_beginner() {
+            document.getElementById('Beginner').style.display = 'none';
+            document.getElementById('down_b').style.display = 'inline';
+            document.getElementById('up_b').style.display = 'none';
+        }
+        function show_intermediate() {
+            document.getElementById('Intermediate').style.display = 'block';
+            document.getElementById('down_i').style.display = 'none';
+            document.getElementById('up_i').style.display = 'inline';
+        }
+        function hide_intermediate() {
+            document.getElementById('Intermediate').style.display = 'none';
+            document.getElementById('down_i').style.display = 'inline';
+            document.getElementById('up_i').style.display = 'none';
+        }
+        function show_ds() {
+            document.getElementById('data_structures').style.display = 'block';
+            document.getElementById('down_ds').style.display = 'none';
+            document.getElementById('up_ds').style.display = 'inline';
+        }
+        function hide_ds() {
+            document.getElementById('data_structures').style.display = 'none';
+            document.getElementById('down_ds').style.display = 'inline';
+            document.getElementById('up_ds').style.display = 'none';
+        }
+        function show_oops() {
+            document.getElementById('OOPS').style.display = 'block';
+            document.getElementById('down_oops').style.display = 'none';
+            document.getElementById('up_oops').style.display = 'inline';
+        }
+        function hide_oops() {
+            document.getElementById('OOPS').style.display = 'none';
+            document.getElementById('down_oops').style.display = 'inline';
+            document.getElementById('up_oops').style.display = 'none';
+        }
+        function show() {
+            document.getElementById('menu').style.transform = 'translate(260px)'
+            document.getElementById('hide').style.display = 'block';
+            document.getElementById('show').style.display = 'none';
+            document.getElementById('main_content').style.marginLeft = '260px'
+        }
+        function hide() {
+            document.getElementById('menu').style.transform = 'translate(-250px)';
+            document.getElementById('show').style.display = 'block';
+            document.getElementById('main_content').style.marginLeft = '0px'
+        }
+    </script>
+</body>
+
+</html>

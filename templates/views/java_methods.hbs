@@ -1,0 +1,190 @@
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/java_styles.css">
+        <link rel="stylesheet" href="css/java_prism.css">
+        <title>Java method</title>
+    </head>
+
+    <body>
+        {{>java_header}}
+        <div class="wrapper">
+            {{>java_menu}}
+            <div class="content card" id="main_content">
+                <div class="heading">
+                    <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+                    <a href="/java_methods_basic"><button class="btn btn-primary level-btn">Level: Intermediate</button></a>
+                </div>
+                <div class="iframe-container">
+                    <iframe
+                      src="https://codellama-codellama-13b-chat.hf.space"
+                      frameborder="0"
+                      scrolling="no"
+                    ></iframe>
+                  </div>
+                  <button class="click"><span>🤖</span></button>
+                <h3>Methods</h3>
+                <p>In Java, a method is a block of code that performs a specific task or operation. It is defined within a class and can be called (invoked) to execute its functionality. A method's signature includes its name and the list of its parameters. The signature does not include the return type. To execute a method, it must be called or invoked. Method calls are made by using the method's name followed by parentheses, and any required arguments (if the method expects parameters)</p>
+                <ol>
+                    <li>
+                        <h5>Return Type: </h5><p>A method can either return a value of a specific data type or have no return value (void). The return type is specified in the method declaration and determines the type of data the method provides after execution.</p>
+                    </li>
+                    <li>
+                        <h5>Parameters: </h5><p>Methods can accept zero or more parameters, which are used to pass values into the method. Parameters are declared within the parentheses following the method name and are used as input for the method's logic.</p>
+                    </li>
+                    <li>
+                        <h5>Access Modifiers:</h5><p>Methods can have access modifiers like public, private, protected, or package-private (no modifier). These access modifiers determine the method's visibility and accessibility from other classes.</p>
+                    </li>
+                    <li>
+                        <h5>Method Overloading:</h5><p> Java allows you to define multiple methods with the same name in the same class, as long as the parameter lists or parameter types differ. This is called method overloading and enables the creation of methods with similar functionality.</p>
+                    </li>
+                    <li>
+                        <h5>Static Methods: </h5><p>Methods can be declared as static, which means they belong to the class itself rather than an instance of the class. Static methods can be called using the class name, e.g., ClassName.methodName().</p>
+                    </li>
+                </ol>
+                <div class="code_container">
+                    <div class="code_wrapper">
+                        <pre>
+                            <code id="code" class="language-Java">
+                                public class MyClass {
+
+                                    // Method 1: No parameters, no return value (void method)
+                                    public static void printHello() {
+                                        System.out.println("Hello, from a void method!");
+                                    }
+                                
+                                    // Method 2: Parameters, no return value (void method)
+                                    public static void addNumbers(int num1, int num2) {
+                                        int sum = num1 + num2;
+                                        System.out.println("Sum: " + sum);
+                                    }
+                                
+                                    // Method 3: No parameters, with a return value (int method)
+                                    public static int generateRandomNumber() {
+                                        int randomNumber = (int) (Math.random() * 100);
+                                        return randomNumber;
+                                    }
+                                
+                                    // Method 4: Parameters, with a return value (String method)
+                                    public static String greetUser(String name) {
+                                        return "Hello, " + name + "!";
+                                    }
+                                
+                                    public static void main(String[] args) {
+                                
+                                        // Calling Method 1
+                                        printHello();
+                                
+                                        // Calling Method 2
+                                        addNumbers(5, 7);
+                                
+                                        // Calling Method 3
+                                        int randomNum = generateRandomNumber();
+                                        System.out.println("Random Number: " + randomNum);
+                                
+                                        // Calling Method 4
+                                        String greeting = greetUser("Alice");
+                                        System.out.println(greeting);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it out >></button>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div data-pym-src="https://www.jdoodle.com/embed/v0/6ym6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_change">
+                    <a class="btn btn-primary prev" href="/java_arrays">Prev</a>
+                    {{!-- <a class="btn btn-primary next" href="/java_oops">Next</a> --}}
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            </script>
+            <script src="js/java_prism.js"></script>
+            <script>
+                function show_beginner() {
+                    document.getElementById('Beginner').style.display = 'block';
+                    document.getElementById('down_b').style.display = 'none';
+                    document.getElementById('up_b').style.display = 'inline';
+                }
+                function hide_beginner() {
+                    document.getElementById('Beginner').style.display = 'none';
+                    document.getElementById('down_b').style.display = 'inline';
+                    document.getElementById('up_b').style.display = 'none';
+                }
+                function show_intermediate() {
+                    document.getElementById('Intermediate').style.display = 'block';
+                    document.getElementById('down_i').style.display = 'none';
+                    document.getElementById('up_i').style.display = 'inline';
+                }
+                function hide_intermediate() {
+                    document.getElementById('Intermediate').style.display = 'none';
+                    document.getElementById('down_i').style.display = 'inline';
+                    document.getElementById('up_i').style.display = 'none';
+                }
+                function show_ds() {
+                    document.getElementById('data_structures').style.display = 'block';
+                    document.getElementById('down_ds').style.display = 'none';
+                    document.getElementById('up_ds').style.display = 'inline';
+                }
+                function hide_ds() {
+                    document.getElementById('data_structures').style.display = 'none';
+                    document.getElementById('down_ds').style.display = 'inline';
+                    document.getElementById('up_ds').style.display = 'none';
+                }
+                function show_oops() {
+                    document.getElementById('OOPS').style.display = 'block';
+                    document.getElementById('down_oops').style.display = 'none';
+                    document.getElementById('up_oops').style.display = 'inline';
+                }
+                function hide_oops() {
+                    document.getElementById('OOPS').style.display = 'none';
+                    document.getElementById('down_oops').style.display = 'inline';
+                    document.getElementById('up_oops').style.display = 'none';
+                }
+                function show() {
+                    document.getElementById('menu').style.transform = 'translate(260px)'
+                    document.getElementById('hide').style.display = 'block';
+                    document.getElementById('show').style.display = 'none';
+                    document.getElementById('main_content').style.marginLeft = '260px'
+                }
+                function hide() {
+                    document.getElementById('menu').style.transform = 'translate(-250px)';
+                    document.getElementById('show').style.display = 'block';
+                    document.getElementById('main_content').style.marginLeft = '0px'
+                }
+            </script>
+            <script src="js/chatbot.js"></script>
+    </body>
+    </html>

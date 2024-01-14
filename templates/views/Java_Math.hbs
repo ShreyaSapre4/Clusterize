@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/java_styles.css">
+    <link rel="stylesheet" href="css/java_prism.css">
+    <title>Java Math</title>
+</head>
+
+<body>
+   {{>java_header}}
+    <div class="wrapper">
+        {{>java_menu}}
+        <div class="content card" id="main_content">
+            <h1 style="font-family: 'Calistoga', cursive;">Java</h1>
+            <h3>Math</h3>
+            <p>The <i>Math</i> class in Java is a utility class that provides functionalities for mathematical operations. It includes static methods to perform common mathematical calculations. It offers a versatile toolkit for developers to execute complex mathematical computations efficiently within their Java programs. </p>
+            <p>The <i>Math</i> class is part of the <b>java.lang </b>package. This package is automatically imported into every Java program, so there's no need to explicitly import it to use the functionalities provided by the Math class. Therefore, you can directly access the Math class and its methods without importing any additional packages.</p>
+            <p><ol>
+                <li> <h5>sqrt(double a):</h5> Returns the square root of a number a. Example: Math.sqrt(25) returns 5.0.</li>
+                <li><h5>floor(double a):</h5> Returns the largest (closest to positive infinity) double value that is less than or equal to the argument. Example: Math.floor(7.8) returns 7.0.</li>
+                <li><h5>ceil(double a):</h5> Returns the smallest (closest to negative infinity) double value that is greater than or equal to the argument.</li>
+                <li><h5>round(float a) or round(double a):</h5> Returns the closest integer to the argument. Rounds towards the nearest whole number.</li>
+                <li><h5>abs(int a) or abs(double a):</h5> Returns the absolute value of a number.</li>
+                <li> <h5>pow(double a, double b):</h5>Returns the value of the first argument raised to the power of the second argument.</li>
+                <li><h5>random():</h5> Returns a random double value greater than or equal to 0.0 and less than 1.0.</li>
+            </ol></p>
+            <h3>Example</h3>
+            <div class="code_container">
+                <div class="code_wrapper">
+                    <pre>
+                        <code id="code" class="language-Java">
+                            public class MathMethodsExample {
+                                public static void main(String[] args) {
+                                    double num1 = 25.0;
+                                    double num2 = 7.8;
+                                    int num3 = -10;
+                                    double base = 2.0;
+                                    double exponent = 3.0;
+                            
+                                    // Square root
+                                    double sqrtResult = Math.sqrt(num1);
+                                    System.out.println("Square root of " + num1 + " = " + sqrtResult);
+                            
+                                    // Floor and Ceil
+                                    double floorResult = Math.floor(num2);
+                                    double ceilResult = Math.ceil(num2);
+                                    System.out.println("Floor of " + num2 + " = " + floorResult);
+                                    System.out.println("Ceil of " + num2 + " = " + ceilResult);
+                            
+                                    // Round
+                                    long roundResult = Math.round(num2);
+                                    System.out.println("Rounded value of " + num2 + " = " + roundResult);
+                            
+                                    // Absolute value
+                                    int absResult = Math.abs(num3);
+                                    System.out.println("Absolute value of " + num3 + " = " + absResult);
+                            
+                                    // Power
+                                    double powResult = Math.pow(base, exponent);
+                                    System.out.println(base + " raised to the power of " + exponent + " = " + powResult);
+                            
+                                    // Random number
+                                    double randomResult = Math.random();
+                                    System.out.println("Random value between 0.0 and 1.0 = " + randomResult);
+                                }
+                            }
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Try it
+                out >></button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div data-pym-src="https://www.jdoodle.com/plugin/v0/d898f7f5be1e8369c48fac1706564825/f7952b13ef85d837f8293ad94d720335"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_change">
+                <a class="btn btn-primary prev" href="/java_methods">Prev</a>
+                <a class="btn btn-primary next" href="/java_classes">Next</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/Javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/java_prism.js"></script>
+        <script>
+            function show_beginner() {
+                document.getElementById('Beginner').style.display = 'block';
+                document.getElementById('down_b').style.display = 'none';
+                document.getElementById('up_b').style.display = 'inline';
+            }
+            function hide_beginner() {
+                document.getElementById('Beginner').style.display = 'none';
+                document.getElementById('down_b').style.display = 'inline';
+                document.getElementById('up_b').style.display = 'none';
+            }
+            function show_intermediate() {
+                document.getElementById('Intermediate').style.display = 'block';
+                document.getElementById('down_i').style.display = 'none';
+                document.getElementById('up_i').style.display = 'inline';
+            }
+            function hide_intermediate() {
+                document.getElementById('Intermediate').style.display = 'none';
+                document.getElementById('down_i').style.display = 'inline';
+                document.getElementById('up_i').style.display = 'none';
+            }
+            function show_ds() {
+                document.getElementById('data_structures').style.display = 'block';
+                document.getElementById('down_ds').style.display = 'none';
+                document.getElementById('up_ds').style.display = 'inline';
+            }
+            function hide_ds() {
+                document.getElementById('data_structures').style.display = 'none';
+                document.getElementById('down_ds').style.display = 'inline';
+                document.getElementById('up_ds').style.display = 'none';
+            }
+            function show_oops() {
+                document.getElementById('OOPS').style.display = 'block';
+                document.getElementById('down_oops').style.display = 'none';
+                document.getElementById('up_oops').style.display = 'inline';
+            }
+            function hide_oops() {
+                document.getElementById('OOPS').style.display = 'none';
+                document.getElementById('down_oops').style.display = 'inline';
+                document.getElementById('up_oops').style.display = 'none';
+            }
+            function show() {
+                document.getElementById('menu').style.transform = 'translate(260px)'
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('main_content').style.marginLeft = '250px'
+            }
+            function hide() {
+                document.getElementById('menu').style.transform = 'translate(-250px)';
+                document.getElementById('show').style.display = 'block';
+                document.getElementById('main_content').style.marginLeft = '0px'
+            }
+        </script>
+</body>
+</html>

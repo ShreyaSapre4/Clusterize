@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Gentium+Book+Plus:ital@1&family=Titillium+Web&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+.navbar-expand-lg{
+    /* background-color: rgb(249, 108, 108);
+     */
+     background: transparent;
+}
+.navbar-brand{
+    color: rgb(0, 149, 255);
+}
+.navbar-brand:hover{
+    color:  rgb(7, 83, 137);
+}
+.navbar-expand-lg ul li a {
+    text-decoration: none;
+    color:  rgb(0, 149, 255);
+    font-weight: bold;
+    width: 10%;
+}
+.navbar-expand-lg ul li a:hover{
+    color:  rgb(0, 149, 255);
+    cursor: pointer;
+}
+
+body{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.458),rgba(255,255,255,0.6)),url(../images/java_bg.png);
+    background-size: cover;
+    background-repeat:repeat-y;
+    background-position: center; 
+    
+}
+
+.side_menu{
+    left: -250px;
+    position: absolute;
+    width: 250px;
+    min-height: 170vh;
+    background-color: rgba(0, 149, 255, 0.7);;
+    backdrop-filter: blur  (5px);
+    transition: all 0.7s ease;
+    margin-left: -10px;
+}
+
+.side_menu ul{
+    text-align: center;
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0px;
+}
+
+.side_menu ul li{
+    line-height: 30px;
+    border-top: 1px solid rgb(68, 67, 67);
+    border-bottom: 1px solid rgb(68, 67, 67);
+}
+
+.side_menu a{
+    top:20px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(68, 67, 67);
+    text-align: center;
+    line-height: 40px;
+}
+
+.wrapper{
+    display: flex;
+}
+label #show, label #hide{
+    position: absolute;
+    cursor: pointer;
+}
+
+#show{
+    font-size: 35px;
+    left: 20px;
+    top: 30px;
+    color:  rgb(68, 67, 67);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+#Beginner{
+    display: none;
+}
+#Intermediate{
+    display: none;
+}
+
+#menu_header{
+    display: flex;
+    color: rgb(68, 67, 67);
+    border-bottom: 2px solid rgb(68, 67, 67);
+}
+
+#menu_header h1{
+    width: 235px;
+}
+.content{
+    width: 90%;
+    height: 100%;
+    margin-left: 50px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    transition: all 0.7s ease;
+}
+
+.content h1{
+    text-align: center;
+    font-size: 63px;
+}
+.content h3{
+    color: rgb(0, 149, 255);
+    font-weight: 700;
+}
+.content h4{
+    font-weight: bold;
+    margin-top: 30px;
+}
+.content h5{
+    font-weight: 600;
+    font-size: 21px;
+}
+.card{
+    background: transparent;
+    border: 0px;
+}
+.content table{
+    
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+}
+
+.content tr, td, th {
+        border: 2px solid grey;
+        padding: 5px;
+        text-align: left;
+}
+
+.btn-primary{
+    margin: 20px;
+    width: 250px;
+}
+.code_container{
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.page_change{
+    display: flex;
+    justify-content: right;
+}
+
+.page_change a{
+    width: 150px;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+.heading h1{
+    margin-left: 40%;
+}
+
+.level-btn{
+    margin-left: 20vw;
+}
+
+
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+.heading h1{
+    margin-left: 40%;
+}
+
+.level-btn{
+    margin-left: 20vw;
+}
+
+.iframe-container {
+    position: relative;
+    position: fixed;
+    width: 570px; /* Set the desired width for your iframe */
+    height: 1000px; /* Set the desired height for your visible iframe content (450 - 100) */
+    /* overflow: hidden;
+     */
+     overflow: hidden;
+     display: none;
+     /* margin-left: 57vw; */
+     right: 50px;
+     z-index: 999;
+     top: 3.2em;
+     transition: display 0.5s ease-in-out;
+     border-radius: 5%;
+     border-bottom-right-radius: 0%;
+     margin-top: 5%;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: -390px; /* Shift the iframe content up by 100px to hide the top portion */
+    width: 100%;
+    height: 900px; /* Set the total height of your iframe content (visible + hidden) */
+    /* height: 1200px; */
+    overflow: hidden;
+    border-radius: 5%;
+    border-bottom-right-radius: 0%; 
+  }
+  .iframe-container iframe::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar */
+    height: 0;
+}
+  .click {
+            position: fixed;
+            bottom: 31px; /* Adjust the distance from the bottom as needed */
+            right: 20px; /* Adjust the distance from the right as needed */
+            padding: 10px 20px;
+            background-color: rgba(0, 149, 255, 0.6);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+
+        @media (max-width: 480px) {
+            .content{
+                margin-left: -20px;
+                font-size: 15px;
+            }
+            .code_container{
+                width: 95%;
+                font-size: 11px;
+            }
+            .side_menu h1{
+                padding-left: 5px;
+            }
+        }
+
+        @media (max-width:700px){
+            .click{
+                display: none;
+            }
+        }
+
